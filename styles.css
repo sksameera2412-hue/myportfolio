@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    background-color: #F8F5F2;
+    background-color: #d7e4f3;
     color: #333;
     line-height: 1.6;
 }
@@ -683,4 +683,5 @@ footer {
 
 .nav-links a.active::after {
   width: 100% !important; /* Underline effect */
+
 }
