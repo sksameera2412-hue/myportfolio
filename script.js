@@ -134,4 +134,53 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+});
+// Contact Form Handling
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page refresh
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            
+            // Send to Formspree
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success message
+                    alert('✅ Message sent successfully! I will reply soon.');
+                    contactForm.reset(); // Clear form
+                } else {
+                    throw new Error('Failed to send');
+                }
+            })
+            .catch(error => {
+                // Error message
+                alert('❌ Error sending message. Please email me directly.');
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+    }
 });
