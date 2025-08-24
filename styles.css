@@ -1,10 +1,10 @@
 /* Global Styles */
 :root {
-  --primary-color:#003366;       /* Deep navy */
-  --secondary-color: #CC9966;     /* Warm clay */
-  --dark-color:#4d7aa6 ;          /* Dark blue-gray */
-  --light-color: #F8F5F2;         /* Soft white */
-  --accent-color: #2d93f9;        /* Light denim */
+  --primary-color: #dc2626;    /* Rich crimson red */
+  --secondary-color: #059669;  /* Deep emerald green */
+  --dark-color: #1f2937;       /* Charcoal gray */
+  --light-color: #fdfbf8;      /* Warm off-white */
+  --accent-color: #d97706;     /* Burnt orange */
 }
 * {
     margin: 0;
@@ -159,7 +159,7 @@ nav {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(to right, #F8F5F2 0%, #E8E5E2 100%);
+    background: #d7e4f; /* <-- NEW SOLID COLOR */
     padding-top: 80px;
 }
 
@@ -685,3 +685,4 @@ footer {
   width: 100% !important; /* Underline effect */
 
 }
+
